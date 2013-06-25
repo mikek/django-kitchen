@@ -1,6 +1,7 @@
 An endless list of possible improvements
 ----------------------------------------
 
+ * add sysctl cookbook: https://github.com/onehealth-cookbooks/sysctl
  * fork simple-iptables or add conditional chains processing by other means
  * run memcached through supervisord (maybe with a separate recipe)
  * use non-standard ssh port
