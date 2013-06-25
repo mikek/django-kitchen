@@ -1,0 +1,8 @@
+A note on Postgresql password
+-----------------------------
+
+You can generate the password like this:
+
+    echo -n 'S0meTr1ckyPa33w0rd''postgres' | openssl md5 | sed -e 's/.* /md5/'
+
+Details: https://github.com/opscode-cookbooks/postgresql#chef-solo-note

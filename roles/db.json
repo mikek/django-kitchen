@@ -1,0 +1,47 @@
+{
+  "name": "db",
+  "chef_type": "role",
+  "json_class": "Chef::Role",
+  "description": "Database Server",
+  "default_attributes": {
+    "postgresql": {
+      "pg_hba": [
+        {
+          "comment": "# connect to Vagrant from host machine (Virtualbox NAT address space)",
+          "type": "host",
+          "db": "all",
+          "user": "all",
+          "addr": "10.0.2.2/32",
+          "method": "trust"
+        }
+      ],
+      "config": {
+        "listen_addresses": "*",
+        "log_directory": "/var/log/postgresql",
+        "max_connections": 20,
+        "work_mem": "1MB",
+        "maintenance_work_mem": "8MB",
+        "max_files_per_process": 256,
+        "wal_buffers": "-1",
+        "effective_cache_size": "96MB",
+        "default_text_search_config": "pg_catalog.english"
+      },
+      "contrib": {
+        "extensions": [
+          "pgbench",
+          "adminpack",
+          "sslinfo",
+          "tsearch2",
+          "fuzzystrmatch",
+          "pg_trgm"
+        ]
+      }
+    }
+  },
+  "run_list": [
+    "recipe[postgresql::config_initdb]",
+    "recipe[postgresql::contrib]",
+    "recipe[postgresql_server_utf8]",
+    "recipe[postgresql_tsearch2]"
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "djangosite": {
+    "name": "projectname",
+    "domains": ["example.com"],
+    "client_max_body_size": "12M",
+    "supervisor": {
+      "env": {
+        "PROCESSES": 2
+      }
+    },
+    "extra_packages": ["mc", "wget", "curl", "htop"],
+    "http_ports": [80, 8080]
+  },
+  "iptables_generic": {
+    "ssh_ports": [22, 2222],
+    "whitelist_src_addr": ["10.0.2.0/24"]
+  },
+  "postgresql": {
+    "password": {
+      "postgres": "md5a1227d41d1d2904a850af705713b904e"
+    }
+  },
+  "run_list": [
+    "role[generic]",
+    "role[web]",
+    "role[db]",
+    "role[backend]"
+  ]
+}

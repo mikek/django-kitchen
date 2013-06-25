@@ -1,0 +1,7 @@
+/cookbooks
+/tmp
+/.vagrant
+cd
+Cheffile.lock
+Gemfile.lock
+solo.rb

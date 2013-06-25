@@ -1,0 +1,15 @@
+Defaults
+--------
+
+Example node configuration contains more options than you may need.
+See default values in specific cookbooks.
+
+
+PostgreSQL passwords
+--------------------
+
+    postgres    vanityfair
+
+Generate like this:
+
+    echo -n 'vanityfair''postgres' | openssl md5 | sed -e 's/.* /md5/'

@@ -1,0 +1,8 @@
+An endless list of possible improvements
+----------------------------------------
+
+ * fork simple-iptables or add conditional chains processing by other means
+ * run memcached through supervisord (maybe with a separate recipe)
+ * use non-standard ssh port
+   (http://serverfault.com/questions/292397/bootstrapping-servers-with-chef-and-changing-the-ssh-port)
+ * integrate with PSAD and/or Fail2Ban

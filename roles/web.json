@@ -1,0 +1,48 @@
+{
+  "name": "web",
+  "chef_type": "role",
+  "json_class": "Chef::Role",
+  "description": "HTTP Server",
+  "default_attributes": {
+    "nginx": {
+      "version": "1.2.9",
+      "default_site_enabled": false,
+      "source": {
+        "modules": [
+          "http_gzip_static_module", "http_ssl_module",
+          "http_realip_module", "http_stub_status_module",
+          "upload_progress_module"
+        ],
+        "prefix": "/usr/local",
+        "default_configure_flags": [
+          "--prefix=/var/www/nginx",
+          "--conf-path=/etc/nginx/nginx.conf",
+          "--sbin-path=/usr/local/sbin/nginx",
+          "--pid-path=/var/run/nginx.pid",
+          "--error-log-path=/var/log/nginx/error.log",
+          "--http-log-path=/var/log/nginx/access.log"
+        ]
+      },
+      "worker_rlimit_nofile": 2048,
+      "worker_connections": 256,
+      "server_names_hash_bucket_size": 64,
+      "gzip_vary": "on",
+      "gzip_comp_level": 3,
+      "gzip_types": [
+        "text/css", "text/xml", "application/xml", "application/xml+rss", "application/atom+xml",
+        "text/javascript", "application/x-javascript", "application/json",
+        "application/x-font-ttf", "application/x-font-otf", "application/vnd.ms-fontobject", "image/svg+xml"
+      ],
+      "client_max_body_size": "8M",
+      "keepalive_timeout": "67 65",
+      "gzip_min_length": "1K",
+      "server_tokens": "off",
+      "client_body_buffer_size": "4M"
+    }
+  },
+  "run_list": [
+    "recipe[nginx::source]",
+    "recipe[nginx::upload_progress_module]",
+    "recipe[nginx_configs]"
+  ]
+}

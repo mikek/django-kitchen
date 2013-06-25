@@ -1,0 +1,28 @@
+#!/usr/bin/env ruby
+
+site 'http://community.opscode.com/api/v1'
+
+cookbook 'runit'
+cookbook 'supervisor'
+cookbook 'memcached'
+
+#cookbook 'nginx', :git => 'git://github.com/opscode-cookbooks/nginx.git'
+# this contains some not-yet-merged improvements
+cookbook 'nginx', :git => 'git://github.com/mikek/nginx.git'
+
+#cookbook 'locale'
+# 'locale' cookbook only sets LANG at run time
+cookbook 'set_locale', :git => 'git://github.com/rchampourlier/vagrant-stacks.git', :path => 'cookbooks'
+
+cookbook 'postgresql'
+# this encapsulates postgresql::server and ensures the UTF8 locale is set
+cookbook 'postgresql_server_utf8', :git => 'git://github.com/rchampourlier/vagrant-stacks.git', :path => 'cookbooks'
+
+cookbook 'simple_iptables', :git => 'git://github.com/dcrosta/cookbook-simple-iptables'
+
+# our custom cookbooks
+cookbook 'djangosite', :git => 'git://github.com/mikek/webdev-cookbooks.git'
+cookbook 'iptables_generic', :git => 'git://github.com/mikek/webdev-cookbooks.git'
+cookbook 'nginx_configs', :git => 'git://github.com/mikek/webdev-cookbooks.git'
+cookbook 'postgresql_tsearch2', :git => 'git://github.com/mikek/webdev-cookbooks.git'
+cookbook 'supervisor_django', :git => 'git://github.com/mikek/webdev-cookbooks.git'

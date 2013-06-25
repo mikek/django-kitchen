@@ -1,0 +1,22 @@
+{
+  "name": "backend",
+  "chef_type": "role",
+  "json_class": "Chef::Role",
+  "description": "HTTP Server",
+  "default_attributes": {
+    "supervisor": {
+      "logfile_maxbytes": "10MB"
+    },
+    "memcached": {
+      "listen": "127.0.0.1",
+      "memory": 16,
+      "maxconn": 96
+    }
+  },
+  "run_list": [
+    "recipe[supervisor]",
+    "recipe[memcached]",
+    "recipe[supervisor_django]",
+    "recipe[djangosite]"
+  ]
+}
