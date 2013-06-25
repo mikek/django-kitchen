@@ -3,7 +3,7 @@ A knife-solo based Chef kitchen for a Django project provisoning
 
 Tested on 12.04 Precise Pangolin x86 _only_.
 
-This kitchen was created to work along with `basic-devel` set of Fabric tasks,
+This kitchen was created to work along with `webdev-fab` set of Fabric tasks,
 but you can use simple git hooks or other tools to deploy your project.
 
 It should be possible to use different node configs to set up additional
@@ -102,14 +102,14 @@ Cook the box again after changing recipes
 
     knife solo cook vagrantbox
 
-From this point you may use some project deployment tools like `basic-devel`.
+From this point you may use some project deployment tools like `webdev-fab`.
 
 Resources
 ---------
 
  * [knife-solo](http://matschaffer.github.io/knife-solo/)
- * [a complete django project template](https://bitbucket.org/basiccolours/django-basic-project-template)
- * [basic-devel](https://bitbucket.org/basiccolours/basic-devel)
+ * [django basic project template](https://bitbucket.org/basiccolours/django-basic-project-template)
+ * [webdev-fab](https://github.com/mikek/webdev-fab)
  * [Opscode cookbooks](http://community.opscode.com/cookbooks)
  * [Librarian-Chef](https://github.com/applicationsonline/librarian-chef)
  * [Gemfile format](http://gembundler.com/v1.3/gemfile.html)
