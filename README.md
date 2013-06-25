@@ -76,7 +76,7 @@ Prepare local environment
 
     bundle
 
-### Reinitialize knife-solo environment to generate solo.rb config
+### Reinitialize knife-solo environment and generate solo.rb config
 
     knife solo init .
 
