@@ -16,7 +16,6 @@
   "run_list": [
     "recipe[supervisor]",
     "recipe[memcached]",
-    "recipe[supervisor_django]",
-    "recipe[djangosite]"
+    "recipe[supervisor_django]"
   ]
 }

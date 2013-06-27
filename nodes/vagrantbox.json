@@ -24,6 +24,7 @@
     "role[generic]",
     "role[web]",
     "role[db]",
-    "role[backend]"
+    "role[backend]",
+    "recipe[djangosite]"
   ]
 }
