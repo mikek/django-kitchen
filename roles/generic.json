@@ -1,5 +1,5 @@
 {
-  "name": "backend",
+  "name": "generic",
   "chef_type": "role",
   "json_class": "Chef::Role",
   "description": "HTTP Server",
