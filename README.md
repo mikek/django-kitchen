@@ -1,7 +1,7 @@
 A knife-solo based Chef kitchen for a Django project provisoning
 ================================================================
 
-Tested on 12.04 Precise Pangolin x86 _only_.
+Tested on Ubuntu 12.04 Precise Pangolin x86 _only_.
 
 This kitchen was created to work along with `webdev-fab` set of Fabric tasks,
 but you can use simple git hooks or other tools to deploy your project.
@@ -67,20 +67,20 @@ port or key file.)
 Prepare local environment
 -------
 
-### Use RVM gemsets to isolate installed gems
+Use RVM gemsets to isolate installed gems
 
     rvm gemset create django-kitchen
     rvm gemset use django-kitchen
 
-### Install required ruby gems and chef tools
+Install required ruby gems and chef tools
 
     bundle
 
-### Reinitialize knife-solo environment and generate solo.rb config
+Reinitialize knife-solo environment and generate solo.rb config
 
     knife solo init .
 
-### Fetch required cookbooks
+Fetch required cookbooks
 
     librarian-chef install
 
@@ -108,9 +108,9 @@ Resources
 ---------
 
  * [knife-solo](http://matschaffer.github.io/knife-solo/)
- * [django basic project template](https://bitbucket.org/basiccolours/django-basic-project-template)
+ * [django basic project template](https://github.com/mikek/django-basic-project-template)
  * [webdev-fab](https://github.com/mikek/webdev-fab)
  * [Opscode cookbooks](http://community.opscode.com/cookbooks)
  * [Librarian-Chef](https://github.com/applicationsonline/librarian-chef)
  * [Gemfile format](http://gembundler.com/v1.3/gemfile.html)
- * [RVM and gemsests](https://rvm.io/gemsets/basics/)
+ * [RVM gemsests](https://rvm.io/gemsets/basics/)
