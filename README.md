@@ -98,6 +98,11 @@ installed in:
 
     rvm gemset use knife-solo
 
+If you do not use specific cookbook versions force Librarian-Chef to fetch
+the latest versions from repositories:
+
+    rm Cheffile.lock && librarian-chef install
+
 Cook the box again after changing recipes
 
     knife solo cook vagrantbox
