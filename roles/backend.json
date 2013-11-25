@@ -2,7 +2,7 @@
   "name": "backend",
   "chef_type": "role",
   "json_class": "Chef::Role",
-  "description": "HTTP Server",
+  "description": "Typical Django backend stuff",
   "default_attributes": {
     "supervisor": {
       "logfile_maxbytes": "10MB"

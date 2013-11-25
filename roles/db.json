@@ -2,7 +2,7 @@
   "name": "db",
   "chef_type": "role",
   "json_class": "Chef::Role",
-  "description": "Database Server",
+  "description": "PostgreSQL Database Server",
   "default_attributes": {
     "postgresql": {
       "pg_hba": [
