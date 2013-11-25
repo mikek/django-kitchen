@@ -2,17 +2,7 @@
   "name": "generic",
   "chef_type": "role",
   "json_class": "Chef::Role",
-  "description": "HTTP Server",
-  "default_attributes": {
-    "supervisor": {
-      "logfile_maxbytes": "10MB"
-    },
-    "memcached": {
-      "listen": "127.0.0.1",
-      "memory": 16,
-      "maxconn": 96
-    }
-  },
+  "description": "Generic stuff to configure on a remote host",
   "run_list": [
     "recipe[set_locale]",
     "recipe[simple_iptables]",
