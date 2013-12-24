@@ -1,10 +1,12 @@
-A knife-solo based Chef kitchen for a Django project provisoning
-================================================================
+A knife-solo based Chef kitchen for a Django-ready host provisoning
+===================================================================
 
-Tested on Ubuntu 12.04 Precise Pangolin x86 _only_.
+*Tested on Ubuntu 12.04 Precise Pangolin x86 _only_.*
 
 This kitchen was created to work along with `webdev-fab` set of Fabric tasks,
-but you can use simple git hooks or other tools to deploy your project.
+but you can use simple git hooks or other tools to deploy your project. It is
+not a project deployment tool, but a host provisioning set of recipes and
+sould be used up to the point your deployment tool comes into play.
 
 It should be possible to use different node configs to set up additional
 projects on the same host. The last provisioned node's settings may override
@@ -14,10 +16,10 @@ hash in every node configuration.
 Configuration description
 -------------
 
-This is a collections of Chef recipes to set up single host production
+This is a collection of Chef recipes to set up single host production
 environment to run a Django site. Django itself is run in WSGI mode by uWSGI
 application container controlled by a Supervisor process manager. Nginx web
-server connects to uWSGI unix socket in a project directory. PostgreSQL is
+server connects to uWSGI UNIX socket in a project directory. PostgreSQL is
 used with dedicated user/db for the project.
 
             Supervisor      --> Memcached
@@ -56,7 +58,7 @@ add something like this to make sure it would work:
       IdentityFile ~/.ssh/vagrant_rsa
 
 Prepare the host
--------
+----------------
 
 Be sure to add a user allowed to run 'sudo'. It might be convinient to upload
 your public SSH key too.
@@ -64,44 +66,46 @@ your public SSH key too.
 (Hint: you may use ~/.ssh/config entry like above to use different username,
 port or key file.)
 
-Prepare local environment
--------
+Prepare local kitchen environment
+---------------------------------
 
-Use RVM gemsets to isolate installed gems
+    cd path/to/django-kitchen
+
+Use RVM gemsets to isolate installed gems:
 
     rvm gemset create django-kitchen
     rvm gemset use django-kitchen
 
-Install required ruby gems and chef tools
+Install required ruby gems and chef tools:
 
-    bundle
+    rm Gemfile.lock; bundle
 
-Reinitialize knife-solo environment and generate knife.rb config
+Reinitialize knife-solo environment and generate knife.rb config:
 
     knife solo init .
 
-Fetch required cookbooks
+Fetch required cookbooks:
 
     librarian-chef install
 
-Run the recipes
----
+Use recipes
+-----------
 
     vagrant up
     knife solo bootstrap vagrantbox
 
-Usage
------
+Subsequent usage
+----------------
 
-Each time before using knife you should probably choose the gemset it is
-installed in:
+Each time before using knife or librarian-chef you should probably choose the
+gemset it is installed in:
 
     rvm gemset use django-kitchen
 
 If you do not use specific cookbook versions force Librarian-Chef to fetch
 the latest versions from repositories:
 
-    rm Cheffile.lock && librarian-chef install
+    rm Cheffile.lock; librarian-chef install
 
 Cook the box again after changing recipes
 
