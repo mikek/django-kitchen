@@ -1,6 +1,7 @@
 /cookbooks/
 /tmp/librarian/
 /.vagrant
+/.chef/knife.rb
 cd
 Cheffile.lock
 Gemfile.lock
