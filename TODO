@@ -7,3 +7,4 @@ An endless list of possible improvements
  * use non-standard ssh port
    (http://serverfault.com/questions/292397/bootstrapping-servers-with-chef-and-changing-the-ssh-port)
  * integrate with PSAD and/or Fail2Ban
+ * set up swap
