@@ -76,7 +76,7 @@ Install required ruby gems and chef tools
 
     bundle
 
-Reinitialize knife-solo environment and generate solo.rb config
+Reinitialize knife-solo environment and generate knife.rb config
 
     knife solo init .
 
