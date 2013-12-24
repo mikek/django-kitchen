@@ -1,5 +1,5 @@
-/cookbooks
-/tmp
+/cookbooks/
+/tmp/librarian/
 /.vagrant
 cd
 Cheffile.lock
