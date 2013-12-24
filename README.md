@@ -96,7 +96,7 @@ Usage
 Each time before using knife you should probably choose the gemset it is
 installed in:
 
-    rvm gemset use knife-solo
+    rvm gemset use django-kitchen
 
 If you do not use specific cookbook versions force Librarian-Chef to fetch
 the latest versions from repositories:
