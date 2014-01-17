@@ -3,6 +3,11 @@
     "name": "projectname",
     "domains": ["example.com"],
     "client_max_body_size": "12M",
+    "cache": {
+      "enabled": true,
+      "anonymous_only": true,
+      "expires": "1m"
+    },
     "supervisor": {
       "env": {
         "UWSGI_PROCESSES": 2
