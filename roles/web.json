@@ -5,7 +5,7 @@
   "description": "HTTP Server",
   "default_attributes": {
     "nginx": {
-      "version": "1.2.9",
+      "version": "1.6.0",
       "default_site_enabled": false,
       "source": {
         "modules": [
