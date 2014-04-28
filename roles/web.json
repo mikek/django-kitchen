@@ -34,7 +34,11 @@
       ],
       "keepalive_timeout": "67 65",
       "gzip_min_length": "1K",
-      "server_tokens": "off"
+      "server_tokens": "off",
+      "enable_rate_limiting": true,
+      "rate_limiting_zone_name": "overall_per_ip",
+      "rate_limiting_backoff": "1m",
+      "rate_limit": "5r/s"
     }
   },
   "run_list": [
