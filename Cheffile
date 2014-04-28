@@ -6,7 +6,7 @@ cookbook 'runit'
 cookbook 'supervisor'
 cookbook 'memcached'
 
-cookbook 'nginx', :git => 'git://github.com/opscode-cookbooks/nginx.git'
+cookbook 'nginx'
 
 #cookbook 'locale'
 # 'locale' cookbook only sets LANG at run time
