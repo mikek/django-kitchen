@@ -10,8 +10,7 @@
       "source": {
         "modules": [
           "nginx::http_gzip_static_module", "nginx::http_ssl_module",
-          "nginx::http_realip_module", "nginx::http_stub_status_module",
-          "nginx::upload_progress_module"
+          "nginx::http_realip_module", "nginx::http_stub_status_module"
         ],
         "prefix": "/usr/local",
         "default_configure_flags": [
@@ -40,7 +39,6 @@
   },
   "run_list": [
     "recipe[nginx::source]",
-    "recipe[nginx::upload_progress_module]",
     "recipe[nginx_configs]"
   ]
 }
