@@ -33,11 +33,9 @@
         "text/javascript", "application/x-javascript", "application/json",
         "application/x-font-ttf", "application/x-font-otf", "application/vnd.ms-fontobject", "image/svg+xml"
       ],
-      "client_max_body_size": "8M",
       "keepalive_timeout": "67 65",
       "gzip_min_length": "1K",
-      "server_tokens": "off",
-      "client_body_buffer_size": "4M"
+      "server_tokens": "off"
     }
   },
   "run_list": [
