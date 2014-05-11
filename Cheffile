@@ -24,3 +24,4 @@ cookbook 'iptables_generic', :git => 'git://github.com/mikek/webdev-cookbooks.gi
 cookbook 'nginx_configs', :git => 'git://github.com/mikek/webdev-cookbooks.git'
 cookbook 'postgresql_tsearch2', :git => 'git://github.com/mikek/webdev-cookbooks.git'
 cookbook 'supervisor_django', :git => 'git://github.com/mikek/webdev-cookbooks.git'
+cookbook 'overrides', :git => 'git://github.com/mikek/webdev-cookbooks.git'
